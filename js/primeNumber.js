@@ -4,7 +4,7 @@ const rl = require('readline-sync');
 
 let number;
 while (true) {
-    number = rl.question('Please enter a whole number:');
+    number = rl.question('Please enter a whole number: ');
     number = parseInt(number);
     if (!isNaN(number) && number >= 0){
         break;
@@ -14,7 +14,7 @@ while (true) {
 
 function primenumbers(n) {
     let primenumberlist = [];
-    for (let a = 1; a <= n; a += 1) {
+    for (let a = 2; a <= n; a += 1) {
        var isprime = primeOrNot(a);
        if (isprime) {
            primenumberlist.push(a);
@@ -24,13 +24,16 @@ function primenumbers(n) {
 }
 
 function primeOrNot(n) {
+    if (n <= 1) {
+        return false;
+    }
     let divisorNo = [];
-    for (let a = 1; a <= n; a += 1) {
+    for (let a = 2; a <= n/2; a += 1) {
          if (n % a === 0) {
              divisorNo.push(a);
          }
     }
-    return divisorNo.length === 2;
+    return divisorNo.length === 0;
 }
 
 let prime = primenumbers(number);
