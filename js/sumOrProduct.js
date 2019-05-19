@@ -2,7 +2,9 @@
 // them the possibility to choose between computing the sum of 1 to n 
 // and computing the product of 1 to,n.
 
-let rl = require("readline-sync");
+const rl = require("readline-sync");
+// external module, needs to be imported only once.
+// once imported its methods can be used any number of times;
  
 let n;
 while(true) {
@@ -10,20 +12,18 @@ while(true) {
     n = parseInt(n);
     if (isNaN(n) === false){
         break;
- }
+    }
     console.log("You havent entered a number.");
 }
 
-var operation;
 function sumOrProduct() {
     console.log('If you would like the sum of 1 to n please enter + or if \
     would like the product please enter * ');
-    let rl = require("readline-sync");
-    operation = rl.question('Please enter your choice of operation:');
-    return operation;
+    var op = rl.question('Please enter your choice of operation:');
+    return op;
     
 }
-sumOrProduct();
+var operation = sumOrProduct();
 
 function sum(arg) {
     
