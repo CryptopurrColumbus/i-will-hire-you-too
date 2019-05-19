@@ -15,15 +15,15 @@ while(true) {
     }
     console.log("You havent entered a number.");
 }
-
-function sumOrProduct() {
-    console.log('If you would like the sum of 1 to n please enter + or if \
-    would like the product please enter * ');
-    var op = rl.question('Please enter your choice of operation:');
-    return op;
-    
+let x;
+while(true) {
+    x= rl.question('If you would like the sum of 1 to n please enter + ' +
+   'or if you would like the product please enter * ');
+    if (x === "*"|| x === "+"){
+        break;
+    }
+    console.log("You havent entered * or +.");
 }
-var operation = sumOrProduct();
 
 function sum(arg) {
     
@@ -42,10 +42,10 @@ function product(arg) {
     return product;
 }
 
-if (operation === "+") {
+if (x === "+") {
     let s = sum(n);
     console.log(`Sum is: ${s}.`);
-} else if (operation === "*") {
+} else if (x === "*") {
     let p = product(n);
     console.log(`Product is: ${p}.`);
 }
