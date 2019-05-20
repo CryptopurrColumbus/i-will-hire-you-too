@@ -13,17 +13,10 @@ while (true) {
 
 function firstYear() {
     let currentDate = new Date();
-    let firstLeapYear = currentDate.getFullYear();
-    if (firstLeapYear % 4 === 0) { 
-        firstLeapYear += 4;
-    } else if (firstLeapYear % 4 === 1) {
-        firstLeapYear += 3;
-    } else if (firstLeapYear % 4 === 2) {
-        firstLeapYear += 2;
-    } else if (firstLeapYear % 4 === 3) {
-        firstLeapYear += 1;
-    }
-    return firstLeapYear;
+    let nextLeapYear = currentDate.getFullYear();
+    // q says next year so not returning present leap year
+    nextLeapYear = nextLeapYear + 4 - (nextLeapYear % 4);
+    return nextLeapYear;
 }
 
 let firstY = firstYear();
