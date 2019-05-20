@@ -9,7 +9,7 @@ function firstYear() {
     return nextLeapYear;
 }
 
-function nextNLeapYears (n) {
+function nextNLeapYears (n, firstY) {
     
     let leapyear = [];
     for (let a = 0; a <= n-1; a += 1) {
@@ -18,17 +18,20 @@ function nextNLeapYears (n) {
     return leapyear;
 }
 
-let number; 
-while (true) {
-    number = rl.question('Please enter a number: ');
-    number = parseInt(number);
-    if (!(isNaN(number)) && number >= 0){
-        break;
+function getNoFromUser () {
+    let number; 
+    while (true) {
+        number = rl.question('Please enter a number: ');
+        number = parseInt(number);
+        if (!(isNaN(number)) && number >= 0){
+            break;
+        }
+        console.log("You havent entered a whole number.");
     }
-    console.log("You havent entered a whole number.");
+    return number;
 }
 
+let noInput = getNoFromUser()
 let firstY = firstYear();
-
-let list = nextNLeapYears(number);
-console.log(`Next ${number} leap years are: ${list}`);
+let list = nextNLeapYears(noInput, firstY);
+console.log(`Next ${noInput} leap years are: ${list}`);
