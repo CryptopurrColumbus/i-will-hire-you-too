@@ -29,7 +29,7 @@ let trys = [];
 randomNo = getRandomNo(1, 201);
 console.log(`ye hai random no: ${randomNo}`);
 
-
+let prevInput;
 while (true) {
     let userInput = getUserInput();
     console.log('while loop ke andar se hi');
@@ -46,12 +46,12 @@ while (true) {
         break;
     }
 
-    trys.push(userInput);
-    if (trys[trys.length-1] === trys[trys.length-2]) {
-        trys.pop();
+    if (prevInput !== undefined && prevInput === userInput) {
+        continue;
     }
-
+    trys.push(userInput);
     console.log(trys);
+    prevInput = userInput;
 }
 
 
