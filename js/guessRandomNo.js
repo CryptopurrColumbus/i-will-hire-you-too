@@ -10,58 +10,49 @@
 
 const rl = require("readline-sync");
 
-let trys =[];
-
-function oneGo()  {
-    
-
-    // Courtesy MDN
-    function getRandomNo(min, max) {
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        return Math.floor(Math.random() * (max - min)) + min;
-    }
-
-    //The maximum is exclusive and the minimum is inclusive
-    randomNo = getRandomNo(1,201);
-    console.log(randomNo);
-
-    function getUserInput() {
-        let userInput = rl.question('Guess the no between 1 and 200:');
-        userInput = parseInt(userInput);
-        return userInput;
-    }
-
-   let a = getUserInput();
-            
-
-    if (a !== randomNo) {
-        if (a>randomNo) {
-            console.log('Your number is too large.');
-        } else if (a<randomNo) {
-            console.log('Your number is too small.')
-        }
-    } else {
-        console.log('Yayee');
-
-    }
-    return a;
+// Courtesy MDN
+function getRandomNo(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min;
 }
 
-for (let x = 1; x <= 5; x += 1) {
-trys.push(oneGo());
-if (trys[trys.length-1]===trys[trys.length-2]) {
+function getUserInput() {
+    let userInput = rl.question('Guess the no between 1 and 200:');
+    userInput = parseInt(userInput);
+    return userInput;
+}
+
+let trys = [];
+
+//The maximum is exclusive and the minimum is inclusive
+randomNo = getRandomNo(1, 201);
+console.log(`ye hai random no: ${randomNo}`);
+
+
+while (true) {
+    let userInput = getUserInput();
+    console.log('while loop ke andar se hi');
+    if (userInput > randomNo) {
+        console.log('Your number is too large.');
+    } else if (userInput < randomNo) {
+        console.log('Your number is too small.')
+    }
+
+    if(userInput === randomNo) {
+        trys.push(userInput);
+        console.log('YOU WIN!!');
+        console.log(`You finished the game in ${trys.length} tries.\nCongratulations!!`);
+        break;
+    }
+
+    trys.push(userInput);
+    if (trys[trys.length-1] === trys[trys.length-2]) {
         trys.pop();
+    }
+
+    console.log(trys);
 }
-console.log(`trys array 2-${trys}`);
-
-
- }
- console.log (trys.length);
-
-
-
-
 
 
 
