@@ -27,12 +27,10 @@ let trys = [];
 
 //The maximum is exclusive and the minimum is inclusive
 randomNo = getRandomNo(1, 201);
-console.log(`ye hai random no: ${randomNo}`);
 
 let prevInput;
 while (true) {
     let userInput = getUserInput();
-    console.log('while loop ke andar se hi');
     if (userInput > randomNo) {
         console.log('Your number is too large.');
     } else if (userInput < randomNo) {
@@ -50,7 +48,6 @@ while (true) {
         continue;
     }
     trys.push(userInput);
-    console.log(trys);
     prevInput = userInput;
 }
 
