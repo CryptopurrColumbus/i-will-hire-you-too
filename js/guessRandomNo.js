@@ -8,7 +8,9 @@
 // if  they input the same number multiple times consecutively it should 
 // be counted as a single try.
 
-// Courtest MDN
+const rl = require("readline-sync");
+
+// Courtesy MDN
 function getRandomNo(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -18,6 +20,24 @@ function getRandomNo(min, max) {
 //The maximum is exclusive and the minimum is inclusive
 randomNo = getRandomNo(1,201);
 console.log(randomNo);
+
+
+function getUserInput() {
+ let userInput = rl.question('Guess the no between 1 and 200:');
+ userInput = parseInt(userInput);
+ return userInput;
+}
+
+let a = getUserInput();
+
+
+ if (a === randomNo) {
+    console.log("yayeee");
+}
+
+
+
+ 
 
 
 
