@@ -31,8 +31,14 @@ function getUserInput() {
 let a = getUserInput();
 
 
- if (a === randomNo) {
-    console.log("yayeee");
+ if (a !== randomNo) {
+    if (a>randomNo) {
+        console.log('Your number is too large.');
+    } else if (a<randomNo) {
+        console.log('Your number is too small.')
+    }
+} else {
+    console.log('Yayee');
 }
 
 
