@@ -1,4 +1,5 @@
 const rl = require('readline-sync');
+
 function returnHighestNumber(arrayinput) {
 	let output = Math.max(...arrayinput);
 	return output;
