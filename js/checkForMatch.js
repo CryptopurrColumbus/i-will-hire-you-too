@@ -5,7 +5,7 @@ function userInputIntoArray() {
 	let numbers;
 	let numarray;
 	while (true) {
-		numbers = rl.question('please enter numbers separated by commas: ');
+		numbers = rl.question('Please enter numbers separated by commas: ');
 
 		numbersarray = numbers.split(',');
 		numarray = numbersarray.map(ele => parseFloat(ele));
@@ -25,15 +25,14 @@ function checkForNo(a) {
 	return !isNaN(a);
 }
 function checkNoExistence(ip, arrinput) {
-   
 	let indexof = arrinput.indexOf(ip);
-	return indexof !== -1;t
+	return indexof !== -1;
 }
 
 let arrinput = userInputIntoArray();
 
 function takeInputToCheck() {
-	let element = rl.question('please enter seach number: ');
+	let element = rl.question('Please enter seach number: ');
 	element = parseFloat(element);
 	return element;
 }
@@ -41,7 +40,7 @@ function takeInputToCheck() {
 let ip = takeInputToCheck();
 
 if (checkNoExistence(ip, arrinput)) {
-	console.log('The element exists in the list.');
+	console.log('The number exists in the list.');
 } else {
-	console.log('The element doesnt exist in the list.');
+	console.log('The number doesnt exist in the list.');
 }
