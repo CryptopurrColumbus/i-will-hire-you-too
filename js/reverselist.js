@@ -19,7 +19,7 @@ function userInputIntoArray() {
 		}
 		console.log("You haven't entered numbers separated by commas.");
 	}
-	return numbersarray;
+	return numarray;
 }
 
 function reversesarray(arrinput) {
@@ -39,6 +39,5 @@ function checkForNo(a) {
 }
 
 let arrinput = userInputIntoArray();
-console.log(arrinput);
 let output = reversesarray(arrinput);
 console.log(`The array ${arrinput} reversed is ${output}.`);
