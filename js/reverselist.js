@@ -27,6 +27,10 @@ function reversesarray(arrinput) {
 	for (var i = arrinput.length - 1; i >= 0; i -= 1) {
 		reversedarr.push(arrinput[i]);
 	}
+	// let arraycopy = arrinput.slice(0);
+	// arrinput.forEach(function() {
+	// 	reversedarr.push(arraycopy.pop());
+	// });
 	return reversedarr;
 }
 
