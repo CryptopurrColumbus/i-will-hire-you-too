@@ -25,11 +25,16 @@ function checkForNo(a) {
 }
 
 function getTotal(arrinput) {
-	let sum = 0;
-	arrinput.forEach(function(element) {
-		sum += element;
-	});
-	return sum;
+	let arraylength = arrinput.length;
+	let newArray = [];
+	for (let a = 0; a < arraylength; a += 1) {
+        let elementRunningTotal = 0;
+		for (let n = 0; n <= a; n += 1) {
+            elementRunningTotal += arrinput[n];
+        }
+        newArray.push(elementRunningTotal);
+    }
+    return newArray;
 }
 
 let arrinput = userInputIntoArray();
